@@ -1,0 +1,54 @@
+﻿@model SuperMarket.Models.staff
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>staff</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StaffId" />
+            <div class="form-group">
+                <label asp-for="StaffFirstName" class="control-label"></label>
+                <input asp-for="StaffFirstName" class="form-control" />
+                <span asp-validation-for="StaffFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StaffLastName" class="control-label"></label>
+                <input asp-for="StaffLastName" class="form-control" />
+                <span asp-validation-for="StaffLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StaffAddress" class="control-label"></label>
+                <input asp-for="StaffAddress" class="form-control" />
+                <span asp-validation-for="StaffAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StaffPhoneNumber" class="control-label"></label>
+                <input asp-for="StaffPhoneNumber" class="form-control" />
+                <span asp-validation-for="StaffPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StaffStatus" class="control-label"></label>
+                <input asp-for="StaffStatus" class="form-control" />
+                <span asp-validation-for="StaffStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
